@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec6151fba0d8a74892ab26cb0db121b, type: 3}
+  m_Name: crystals
+  m_EditorClassIdentifier: 
+  hasRedCrystal: 0
+  hasPurpleCrystal: 0
+  redCrystal: {fileID: 21300000, guid: 2ce80e46ea132a14aaec21c6815e9692, type: 3}
+  purpleCrystal: {fileID: 21300000, guid: e75a58a66dfa1a4418e0f602c9f88335, type: 3}
