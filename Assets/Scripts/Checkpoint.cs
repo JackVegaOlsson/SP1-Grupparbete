@@ -44,7 +44,7 @@ public class Checkpoint : MonoBehaviour
         {
             dialogueBox.SetActive(false);
             checkboxText.SetActive(false);
-            coll.enabled = false;
         }
+        coll.enabled = false;
     }
 }
