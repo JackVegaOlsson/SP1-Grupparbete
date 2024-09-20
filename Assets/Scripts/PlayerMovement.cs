@@ -8,12 +8,13 @@ using Unity.VisualScripting;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     [SerializeField] private SavingApples _savingApples;
 
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float jumpForce = 300f;
     [SerializeField] private Transform leftFoot, rightFoot;
-    [SerializeField] private Transform spawnPosition;
+    //[SerializeField] private Transform spawnPosition;
     [SerializeField] private LayerMask whatIsGround;
 
     [SerializeField] private Slider healthSlider;
@@ -42,8 +43,12 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer rend;
 
+    public Vector2 checkpointPos;
+
     void Start()
     {
+        checkpointPos = transform.position;
+
         canMove = true;
         currentHealth = startingHealth;
         applesCollected = _savingApples.collectedApples;
@@ -153,11 +158,17 @@ public class PlayerMovement : MonoBehaviour
         canMove = true;
     }
 
+    public void UpdateCheckpoint(Vector2 pos)
+    {
+        checkpointPos = pos;
+    }
+
     private void Respawn()
     {
         currentHealth = startingHealth;
         UpdateHealthBar();
-        transform.position = spawnPosition.position;
+        //transform.position = spawnPosition.position;
+        transform.position = checkpointPos;
         rb.velocity = Vector2.zero;
     }
 
@@ -176,7 +187,7 @@ public class PlayerMovement : MonoBehaviour
             UpdateHealthBar();
             Destroy(healthPickup);
 
-            if (currentHealth >= startingHealth) 
+            if (currentHealth >= startingHealth)
             {
                 currentHealth = startingHealth;
             }
